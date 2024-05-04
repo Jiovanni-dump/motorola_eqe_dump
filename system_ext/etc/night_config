@@ -1,0 +1,74 @@
+{
+  //                   back      |   front      |    tele      |    wide
+  "imagers" :     [ "mot_ov50e",  "mot_s5kjns",   "mot_s5k3k1",   "mot_hi1336"],
+  "camera-type" : [ "back-main",   "front-main",   "back-tele",   "back-wide"],
+  "mfnr-night" : {
+    "enable":                     [ true,       true,       true,       true ],
+    "params-dynamic" : [
+         { // default
+           "lux-upper" :          [ 20.0,       20.0,       20.0,       20.0  ],
+           "lux-lower" :          [ 0.0,        0.0,        0.0,        0.0   ],
+           "normal-ev" :          [ 0,          0,          0,          0     ],
+           "ev-exp-time" :        [ 0,          0,          0,          0     ]
+         },
+         { // 1st
+           "lux-upper" :          [ 0.3,        0.3,        0.3,        0.3   ],
+           "lux-lower" :          [ 0,          0,          0,          0     ],
+           "normal-ev" :          [ 5,          5,          5,          5     ],
+           "ev-exp-time" :        [ 144,        125,        125,        125   ]
+         },
+         { // 2th
+          "lux-upper" :           [ 0.5,        0.5,      0.5,      0.5 ],
+          "lux-lower" :           [ 0.3,        0.3,      0.3,      0.3 ],
+          "normal-ev" :           [ 5,          5,        5,        5   ],
+          "ev-exp-time" :         [ 144,        125,      125,      125 ]
+         },
+         { // 3st
+           "lux-upper" :          [ 3.0,        3.0,        3.0,        3.0   ],
+           "lux-lower" :          [ 0.5,        0.5,        0.5,        0.5   ],
+           "normal-ev" :          [ 4,          4,          4,          4     ],
+           "ev-exp-time" :        [ 140,        100,        100,        100   ]
+         },
+         { // 4nd
+           "lux-upper" :          [ 7.0,        7.0,        7.0,        7.0   ],
+           "lux-lower" :          [ 3.0,        3.0,        3.0,        3.0   ],
+           "normal-ev" :          [ 3,          3,          3,          3     ],
+           "ev-exp-time" :        [ 120,        86,         120,        120    ]
+         },
+         { // 5rd
+           "lux-upper" :          [ 15.0,       15.0,       15.0,       15.0 ],
+           "lux-lower" :          [ 7.0,        7.0,        7.0,        7.0  ],
+           "normal-ev" :          [ 2,          2,          2,          2    ],
+           "ev-exp-time" :        [ 100,        66,        100,        100   ]
+         },
+         { // 6th
+           "lux-upper" :          [ 20.0,      20.0,      20.0,      20.0 ],
+           "lux-lower" :          [ 15.0,      15.0,      15.0,      15.0 ],
+           "normal-ev" :          [ 1,         1,         1,         1    ],
+           "ev-exp-time" :        [ 83,        50,        50,        50   ]
+         }
+   ],
+    "lux-idx-to-std-params" : [
+      {
+        "sensor-name" : "mot_ov50e", // Back main
+        "aCoefficient": -34.83,
+        "bCoefficient": 446.53
+      },
+      {
+        "sensor-name" : "mot_s5kjns", // Front main
+        "aCoefficient": -30.42,
+        "bCoefficient": 410.35
+      },
+      {
+        "sensor-name" : "mot_s5k3k1", // Back Tele
+        "aCoefficient" : -33.13,
+        "bCoefficient" : 470.83
+      },
+      {
+        "sensor-name" : "mot_hi1336", // Back Wide
+        "aCoefficient": -32.35,
+        "bCoefficient": 475.07
+      }
+    ]
+  }
+}

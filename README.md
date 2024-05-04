@@ -1,0 +1,14 @@
+# user 14 U2UM34.27-38-5 f759b8 release-keys
+- manufacturer: motorola
+- platform: crow
+- codename: eqe
+- flavor: user
+- release: 14
+- id: U2UM34.27-38-5
+- incremental: f759b8
+- tags: release-keys
+- fingerprint: motorola/eqe_g/eqe:13/U2UM34.27-38-5/f759b8:user/release-keys
+- is_ab: true
+- brand: motorola
+- branch: user-14-U2UM34.27-38-5-f759b8-release-keys
+- repo: motorola_eqe_dump

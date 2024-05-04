@@ -1,0 +1,15 @@
+system_ext/apex/com.android.vndk.v30.apex
+vendor/lib64/sr_models.bin
+vendor/etc/camera/vidhance.lic
+recovery.img
+bootRE/boot.elf
+product/priv-app/Messages/Messages.apk
+product/priv-app/GmsCore/GmsCore.apk
+product/priv-app/AiServices/AiServices.apk
+product/priv-app/MotoDesktop/MotoDesktop.apk
+product/priv-app/MotCamera4/MotCamera4.apk
+product/priv-app/MotoAppUIRefresh/MotoAppUIRefresh.apk
+product/priv-app/Velvet/Velvet.apk
+product/app/TrichromeLibrary_64/TrichromeLibrary_64.apk
+product/app/Gmail2/Gmail2.apk
+product/app/Photos/Photos.apk
