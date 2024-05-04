@@ -1,0 +1,21 @@
+service weaver_hal_service /vendor/bin/hw/android.hardware.weaver@1.0-service-thales
+    class hal
+    user  vendor_thales_weaver
+    group vendor_thales_weaver
+    disabled
+
+on boot && property:ro.boot.bl_state=1 && property:ro.vendor.hw.felica=false
+    start weaver_hal_service
+
+on boot && property:ro.boot.bl_state=2 && property:ro.vendor.hw.felica=false
+    start weaver_hal_service
+
+on boot && property:ro.boot.bl_state=3 && property:ro.vendor.hw.felica=false
+    start weaver_hal_service
+
+on boot && property:ro.boot.bl_state=4 && property:ro.vendor.hw.felica=false
+    start weaver_hal_service
+
+on property:vendor.ese.client.restart=1
+    restart weaver_hal_service
+    setprop vendor.ese.client.restart 0

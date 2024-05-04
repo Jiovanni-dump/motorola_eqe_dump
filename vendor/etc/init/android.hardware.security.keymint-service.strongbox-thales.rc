@@ -1,0 +1,30 @@
+on init && property:ro.boot.bl_state=1 && property:ro.vendor.hw.felica=false
+    start vendor.keymint-strongbox
+
+on init && property:ro.boot.bl_state=2 && property:ro.vendor.hw.felica=false
+    start vendor.keymint-strongbox
+
+on init && property:ro.boot.bl_state=3 && property:ro.vendor.hw.felica=false
+    start vendor.keymint-strongbox
+
+on init && property:ro.boot.bl_state=4 && property:ro.vendor.hw.felica=false
+    start vendor.keymint-strongbox
+
+on property:vendor.tcmd.ese.strongbox.disable=1
+    stop vendor.keymint-strongbox
+
+on property:vendor.tcmd.ese.strongbox.disable=0
+    start vendor.keymint-strongbox
+
+service vendor.keymint-strongbox /vendor/bin/hw/android.hardware.security.keymint-service.strongbox-thales
+    class early_hal
+    user vendor_thales_strongbox
+    group vendor_thales_strongbox wakelock
+    disabled
+
+on property:vendor.ese.client.restart=1
+    stop vendor.keymint-strongbox
+    start vendor.keymint-strongbox
+    stop keystore2
+    start keystore2
+
