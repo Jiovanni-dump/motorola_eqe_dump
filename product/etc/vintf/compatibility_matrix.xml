@@ -1,0 +1,22 @@
+<!--
+    Input:
+        vendor/dolby/dax311/ds/service/aidl/impl/dax_framework_compatibility_matrix_aidl.xml
+        device/moto/common/audioradar/audioradar_compatibility_matrix.xml
+-->
+<compatibility-matrix version="7.0" type="framework">
+    <hal format="hidl" optional="true">
+        <name>motorola.hardware.audio.radar</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAudioRadar</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.dolby.dms</name>
+        <interface>
+            <name>IDms</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

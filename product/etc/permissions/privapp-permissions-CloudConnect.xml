@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<permissions>
+    <privapp-permissions package="com.microsoft.android.cloudconnect">
+	    <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+	    <permission name="com.microsoft.permission.SECURE_SCREEN_SAVER" />
+	    <permission name="com.microsoft.deviceexperiences.permission.CLOUD_CONNECT_ACTIONS" />
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    App optimizations device config
+-->
+<app-optimization version="1">
+
+    <devconfig>
+        <thermal-sensor>back_temp</thermal-sensor>
+        <!-- cpu profiles from low to high
+            SCHEDULER_BOOST = 0x40C00000,
+            MAX_FREQ_CLUSTER_BIG_CORE_0 = 0x40804000,
+            MAX_FREQ_CLUSTER_LITTLE_CORE_0 = 0x40804100,
+            MAX_FREQ_CLUSTER_PRIME_CORE_0 = 0x40804200,
+            MIN_FREQ_CLUSTER_BIG_CORE_0 = 0x40800000,
+            MIN_FREQ_CLUSTER_LITTLE_CORE_0 = 0x40800100,
+            MIN_FREQ_CLUSTER_PRIME_CORE_0 = 0x40800200
+        -->
+        <!-- boost profile -->
+        <profile name="boost1">0x40C00000, 0x1</profile>
+        <profile name="boost2">0x40C00000, 0x1, 0x40800000, 4095, 0x40800100, 4095, 0x40800200, 4095</profile>
+    </devconfig>
+
+    <!-- classified apps -->
+    <optimization name="base_app">
+        <supported-modes>video_mode, video_fullscreen_mode, camera_mode</supported-modes>
+        <default-rr>auto</default-rr>
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+
+    <optimization name="rr_opt_app" parent="base_app">
+    </optimization>
+
+    <optimization name="rr_limit_app" parent="rr_opt_app">
+        <limit rr="90"/>
+    </optimization>
+
+    <optimization name="navigation_app" parent="rr_opt_app">
+        <idle-fps>30</idle-fps>
+        <maxe-profile>aba</maxe-profile>
+    </optimization>
+
+    <optimization name="reading_app" parent="rr_opt_app">
+        <idle-fps>30</idle-fps>
+        <maxe-profile>aba</maxe-profile>
+    </optimization>
+
+    <optimization name="rr_deep_opt_app" parent="rr_opt_app">
+        <min-fps>30</min-fps>
+    </optimization>
+
+    <optimization name="low_latency_app" parent="base_app">
+        <llm>true</llm>
+    </optimization>
+
+    <optimization name="normal_app" parent="base_app">
+    </optimization>
+
+    <optimization name="heavy_load_app">
+        <boost rr="144" profile="boost2"/>
+        <thermal>perf</thermal>
+    </optimization>
+
+    <optimization name="heavy_load_lite_app">
+        <boost profile="boost1"/>
+        <thermal>perf</thermal>
+    </optimization>
+
+    <!-- recognized in-app modes, will merge with app opt at runtime -->
+    <optimization name="video_mode">
+        <default-rr>auto</default-rr>
+    </optimization>
+
+    <optimization name="video_fullscreen_mode">
+        <default-rr>video</default-rr>
+    </optimization>
+
+    <optimization name="camera_mode">
+        <thermal>camera</thermal>
+    </optimization>
+
+    <optimization name="bright_throttle_mode">
+        <limit temp="48" tempClr="42" brt-throttle="0:800"/>
+        <limit temp="49" tempClr="43" brt-throttle="0:700"/>
+        <limit temp="50" tempClr="44" brt-throttle="0:500"/>
+        <limit temp="51" tempClr="45" brt-throttle="0:200"/>
+    </optimization>
+
+    <!-- global modes -->
+    <optimization name="fast_charging_mode">
+        <thermal>fastc</thermal>
+    </optimization>
+
+    <optimization name="wireless_charging_mode">
+        <thermal>wl</thermal>
+    </optimization>
+
+    <!-- limit rr to 90 if battery low (<20%), only for normal apps -->
+    <optimization name="battery_low_mode">
+        <limit rr="90" />
+    </optimization>
+
+    <!-- apps NOT applicable for autoRR  -->
+    <optimization name="com.google.android.apps.restore">
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+    <optimization name="com.google.android.dialer">
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+    <optimization name="com.motorola.launcher3">
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+    <optimization name="android.view.cts">
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+    <optimization name="com.google.android.calculator">
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+    <optimization name="com.android.cts.graphics.framerateoverride">
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+    <optimization name="android.display.cts">
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+    <optimization name="android.graphics.cts">
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+
+    <!-- apps NOT applicable for autoRR but support video mode etc-->
+    <optimization name="com.tencent.mm">
+        <supported-modes>video_mode, video_fullscreen_mode, camera_mode</supported-modes>
+        <limit temp="41" tempClr="39" rr="90"/>
+        <limit temp="44" tempClr="42" rr="60"/>
+    </optimization>
+
+</app-optimization>

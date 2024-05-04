@@ -1,0 +1,6 @@
+<permissions>
+   <permission name="com.thundercomm.permission.HIDRAW_CONTROL">
+       <group gid="uhid" />
+   </permission>
+</permissions>
+

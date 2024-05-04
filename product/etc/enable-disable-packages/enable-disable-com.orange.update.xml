@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <package-disable-enable-criteria package="com.orange.update" default_action="disable">
+        <criteria action="enable" channel="oraeu" mccmnc="20610"/>
+        <criteria action="enable" channel="oraeu" mccmnc="20801"/>
+        <criteria action="enable" channel="oraeu" mccmnc="21403"/>
+        <criteria action="enable" channel="oraeu" mccmnc="21421"/>
+        <criteria action="enable" channel="oraeu" mccmnc="22610"/>
+        <criteria action="enable" channel="oraeu" mccmnc="23101"/>
+        <criteria action="enable" channel="oraeu" mccmnc="25901"/>
+        <criteria action="enable" channel="oraeu" mccmnc="26003"/>
+        <criteria action="enable" channel="oraeu" mccmnc="27099"/>
+    </package-disable-enable-criteria>
+</enable-disable-package>

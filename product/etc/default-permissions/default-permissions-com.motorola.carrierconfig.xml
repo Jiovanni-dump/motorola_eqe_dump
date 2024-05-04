@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<exceptions>
+    <exception package="com.motorola.carrierconfig">
+        <permission name="android.permission.ACCESS_FINE_LOCATION" /> <!--b/300395356-->
+        <permission name="android.permission.RECEIVE_SMS" /> <!--b/300395356-->
+    </exception>
+</exceptions>

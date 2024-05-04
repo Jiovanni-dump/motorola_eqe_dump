@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enable-disable-package>
+    <!-- Uninstall Moto Display and erase its user data -->
+    <package-disable-enable-criteria package="com.motorola.motodisplay" systemOnly="false" default_action="remove">
+    </package-disable-enable-criteria>
+</enable-disable-package>

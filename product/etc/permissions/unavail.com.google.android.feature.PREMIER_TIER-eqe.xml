@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <unavailable-feature name="com.google.android.feature.PREMIER_TIER" prop="ro.product.gms_premier_tier" />
+</permissions>

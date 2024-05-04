@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<permissions>
+    <!-- FEATURE-7650 fast charge setting. -->
+    <!-- when turn it on, phone will start boosting the charging process. -->
+    <feature name="com.motorola.chargeboost"/>
+</permissions>

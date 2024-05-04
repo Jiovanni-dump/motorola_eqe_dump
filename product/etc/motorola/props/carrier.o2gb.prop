@@ -1,0 +1,2 @@
+import /product/etc/motorola/props/carrier.eea.prop
+ro.product.gms_premier_tier=false
